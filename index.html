@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            const rps = ['rock', 'paper', 'scissors'];
+            let playerScore = '';
+            let compScore = '';
+
+            function game() {
+                playerScore = '';
+                compScore = '';
+                for (i = 0; i < 5; i++) {
+                    let playerSelection = prompt('Choose on of rock, paper or scissors');
+                    playRound(playerSelection);
+                }
+
+                console.log('Player ' + playerScore + ' vs ' + compScore + ' computer');
+            }
+
+            function playRound(ps) {
+                computerSelection = rps[Math.floor(Math.random() * rps.length)];
+
+                ps = ps.toLowerCase();
+                if (ps == computerSelection) {
+                    console.log("It's a tie! " + computerSelection);
+                } else if (
+                    (ps == 'rock' && computerSelection == 'scissors') ||
+                    (ps == 'paper' && computerSelection == 'rock') ||
+                    (ps == 'scissors' && computerSelection == 'paper')
+                ) {
+                    playerScore++;
+                    console.log('Player wins! ' + computerSelection + playerScore);
+                } else {
+                    compScore++;
+                    console.log('Computer wins ' + computerSelection + compScore);
+                }
+            }
+        </script>
+    </head>
+    <body></body>
+</html>
