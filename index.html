@@ -3,43 +3,31 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
         <title>Document</title>
-        <script>
-            const rps = ['rock', 'paper', 'scissors'];
-            let playerScore = '';
-            let compScore = '';
-
-            function game() {
-                playerScore = '';
-                compScore = '';
-                for (i = 0; i < 5; i++) {
-                    let playerSelection = prompt('Choose on of rock, paper or scissors');
-                    playRound(playerSelection);
-                }
-
-                console.log('Player ' + playerScore + ' vs ' + compScore + ' computer');
-            }
-
-            function playRound(ps) {
-                computerSelection = rps[Math.floor(Math.random() * rps.length)];
-
-                ps = ps.toLowerCase();
-                if (ps == computerSelection) {
-                    console.log("It's a tie! " + computerSelection);
-                } else if (
-                    (ps == 'rock' && computerSelection == 'scissors') ||
-                    (ps == 'paper' && computerSelection == 'rock') ||
-                    (ps == 'scissors' && computerSelection == 'paper')
-                ) {
-                    playerScore++;
-                    console.log('Player wins! ' + computerSelection + playerScore);
-                } else {
-                    compScore++;
-                    console.log('Computer wins ' + computerSelection + compScore);
-                }
-            }
-            game();
-        </script>
+        <script type="text/javascript" src="index.js"></script>
     </head>
-    <body></body>
+    <body>
+        <div class="comp-side">
+            <h2 id="pick">Pick</h2>
+        </div>
+        <div class="results">
+            <div class="results-box">
+                <h3>Computer</h3>
+                <h1 class="results-box__score" id="comp_score">0</h1>
+            </div>
+
+            <p id="commentary">Let the games begin!</p>
+
+            <div class="results-box">
+                <h3>Human</h3>
+                <h1 class="results-box__score" id="hu_score">0</h1>
+            </div>
+        </div>
+        <div class="player-side">
+            <button id="rock" class="rps-button" onClick="reply_click()">Rock</button>
+            <button id="paper" class="rps-button" onClick="reply_click()">Paper</button>
+            <button id="scissors" class="rps-button" onClick="reply_click()">Scissors</button>
+        </div>
+    </body>
 </html>
