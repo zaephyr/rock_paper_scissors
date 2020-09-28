@@ -19,17 +19,6 @@ function reply_click() {
     }
 }
 
-// function game() {
-//     playerScore = '';
-//     compScore = '';
-//     for (i = 0; i < 5; i++) {
-//         let playerSelection = prompt('Choose on of rock, paper or scissors');
-//         playRound(playerSelection);
-//     }
-
-//     console.log('Player ' + playerScore + ' vs ' + compScore + ' computer');
-// }
-
 function playRound(ps) {
     computerSelection = rps[Math.floor(Math.random() * rps.length)];
     document.getElementById('pick').innerHTML = computerSelection.toUpperCase();
@@ -51,5 +40,3 @@ function playRound(ps) {
         document.getElementById('comp_score').innerHTML = compScore;
     }
 }
-
-// game();
