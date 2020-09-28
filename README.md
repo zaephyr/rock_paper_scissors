@@ -1,1 +1,2 @@
-TOP rock paper scissors app v1
+TOP rock paper scissors app
+ https://zaephyr.github.io/rock_paper_scissors/
